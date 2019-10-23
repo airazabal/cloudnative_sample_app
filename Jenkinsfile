@@ -41,7 +41,9 @@ podTemplate(
                 sh 'mvn -B -DskipTests clean package'
             }
             stage('Local - Test') {
-                sh 'mvn test'
+                steps {
+                    sh 'mvn test'
+                }
             }
             stage('Local - Run') {
                 sh """
